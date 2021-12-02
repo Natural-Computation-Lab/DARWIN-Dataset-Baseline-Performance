@@ -14,7 +14,7 @@ there is a python script for each experiment.
 ## Preliminary Installations
 The scripts for the experiments are written in python. to run them you need to install python at the following version:
 - python 3.8
-- 
+
 Once python is installed, you need to install the necessary libraries. you can do this using the command:
 ```sh
 pip install -r requirements.txt
