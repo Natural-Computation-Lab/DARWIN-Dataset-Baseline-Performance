@@ -1,0 +1,8 @@
+pillow
+numpy
+sklearn
+scipy
+pandas
+reportlab
+statsmodels
+sklearn-lvq
