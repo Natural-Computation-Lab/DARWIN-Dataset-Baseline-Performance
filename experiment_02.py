@@ -197,7 +197,7 @@ for random_state in random_states:
 
     print("------> Seed ", random_state)
     for task in range(25):
-        print("  Task ", task)
+        print("  Task ", task+1)
         output_path_file = os.path.join(seed_folder, str(task + 1) + ".pdf")
         # print(output_path_file)
 
