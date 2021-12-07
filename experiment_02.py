@@ -51,7 +51,7 @@ ranFor = False
 logReg = False
 knn = False
 LDA = True
-GNB = False
+GNB = True
 SVM = False
 SVM2 = False
 DECISION_TREE = False
@@ -61,8 +61,7 @@ LVQ = False
 # dataset parameters
 test_ratio = 0.2  # ratio training - test
 random_state = 42
-random_states = [42, 43, 10, 28, 36, 98, 75, 9, 53, 62]
-random_states = [*random_states, 8, 32, 84, 22, 54, 82, 15, 90, 30, 12]
+random_states = [42, 43, 10, 28, 36, 98, 75, 9, 53, 62, 8, 32, 84, 22, 54, 82, 15, 90, 30, 12]
 # random_state = random.randint(1, 100)
 
 # classification parameters
@@ -183,7 +182,8 @@ with open(dataset_path) as file:
 
 for random_state in random_states:
     seed_folder = os.path.join(output_path, str(random_state))
-    os.mkdir(seed_folder)
+    if not os.path.isdir(seed_folder):
+        os.mkdir(seed_folder)
     # -----------------------------------------------------------------------------------------------------------
     # --- DIVIDING DATASET  -------------------------------------------------------------------------------------
     # -----------------------------------------------------------------------------------------------------------
@@ -195,9 +195,9 @@ for random_state in random_states:
     x_train, x_test, y_train, y_test = model_selection.train_test_split(X, Y, test_size=test_ratio,
                                                                         random_state=random_state, stratify=Y)
 
-    a = 1
+    print("------> Seed ", random_state)
     for task in range(25):
-        print("step ", a)
+        print("  Task ", task)
         output_path_file = os.path.join(seed_folder, str(task + 1) + ".pdf")
         # print(output_path_file)
 
@@ -219,7 +219,7 @@ for random_state in random_states:
         if ranFor:
             scoring = 'accuracy'
             name = 'Random Forest'
-            # print(name)
+            print(name)
 
             # Accuracy txt file
             output_path_txt = os.path.join(output_path, name + "_" + str(task + 1) + ".txt")
@@ -251,7 +251,7 @@ for random_state in random_states:
             # print(confusion_matrix(y_test, predictions))
             # print(classification_report(y_test, predictions))
             # print(predictions)
-            print(best_model.predict(x_train))
+            # print(best_model.predict(x_train))
 
             add_modelresults_to_report(name, scoring, grid_search, grid_search.best_score_, y_test, predictions,
                                        predictions_TS)
@@ -262,7 +262,7 @@ for random_state in random_states:
         if knn:
             scoring = 'accuracy'
             name = 'KNN'
-            # print(name)
+            print(name)
 
             # Accuracy txt file
             output_path_txt = os.path.join(output_path, name + "_" + str(task + 1) + ".txt")
@@ -290,7 +290,7 @@ for random_state in random_states:
             # print(classification_report(y_test, predictions))
 
             # print(predictions)
-            print(best_model.predict(x_train))
+            # print(best_model.predict(x_train))
 
             add_modelresults_to_report(name, scoring, grid_search, grid_search.best_score_, y_test, predictions,
                                        predictions_TS)
@@ -301,7 +301,7 @@ for random_state in random_states:
         if LDA:
             scoring = 'accuracy'
             name = 'LDA'
-            # print(name)
+            print(name)
 
             # Accuracy txt file
             output_path_txt = os.path.join(output_path, name+"_"+str(task+1)+".txt")
@@ -328,7 +328,7 @@ for random_state in random_states:
             # print(confusion_matrix(y_test, predictions))
             # print(classification_report(y_test, predictions))
             # print(predictions)
-            print(best_model.predict(x_train))
+            # print(best_model.predict(x_train))
 
             add_modelresults_to_report(name, scoring, None, cv_results.mean(), y_test, predictions, predictions_TS)
             file_txt.write(str(accuracy_score(y_test, predictions)) + "\n")
@@ -338,7 +338,7 @@ for random_state in random_states:
         if GNB:
             scoring = 'accuracy'
             name = 'Gausian NB'
-            # print(name)
+            print(name)
 
             # Accuracy txt file
             output_path_txt = os.path.join(output_path, name + "_" + str(task + 1) + ".txt")
@@ -365,7 +365,7 @@ for random_state in random_states:
             # print(confusion_matrix(y_test, predictions))
             # print(classification_report(y_test, predictions))
             # print(predictions)
-            print(best_model.predict(x_train))
+            # print(best_model.predict(x_train))
 
             add_modelresults_to_report(name, scoring, None, cv_results.mean(), y_test, predictions, predictions_TS)
             file_txt.write(str(accuracy_score(y_test, predictions)) + "\n")
@@ -375,7 +375,7 @@ for random_state in random_states:
         if logReg:
             scoring = 'accuracy'
             name = 'Logistic Regression'
-            # print(name)
+            print(name)
 
             # Accuracy txt file
             output_path_txt = os.path.join(output_path, name + "_" + str(task + 1) + ".txt")
@@ -401,7 +401,7 @@ for random_state in random_states:
             # print(confusion_matrix(y_test, predictions))
             # print(classification_report(y_test, predictions))
             # print(predictions)
-            print(best_model.predict(x_train))
+            # print(best_model.predict(x_train))
 
             add_modelresults_to_report(name, scoring, grid_search, grid_search.best_score_, y_test, predictions,
                                        predictions_TS)
@@ -436,7 +436,7 @@ for random_state in random_states:
             # print("Report")
             # print(classification_report(y_test, predictions))
             # rint(predictions)
-            print(best_model.predict(x_train))
+            # print(best_model.predict(x_train))
 
             add_modelresults_to_report(name, scoring, grid_search, grid_search.best_score_, y_test, predictions,
                                        predictions_TS)
@@ -446,7 +446,7 @@ for random_state in random_states:
         if SVM:
             scoring = 'accuracy'
             name = 'SVM'
-            # print(name)
+            print(name)
 
             # Accuracy txt file
             output_path_txt = os.path.join(output_path, name + "_" + str(task + 1) + ".txt")
@@ -470,7 +470,7 @@ for random_state in random_states:
             # print("Report")
             # print(classification_report(y_test, predictions))
             # rint(predictions)
-            print(best_model.predict(x_train))
+            # print(best_model.predict(x_train))
 
             add_modelresults_to_report(name, scoring, grid_search, grid_search.best_score_, y_test, predictions,
                                        predictions_TS)
@@ -481,7 +481,7 @@ for random_state in random_states:
         if DECISION_TREE:
             scoring = 'accuracy'
             name = 'Decision Tree'
-            # print(name)
+            print(name)
 
             # Accuracy txt file
             output_path_txt = os.path.join(output_path, name + "_" + str(task + 1) + ".txt")
@@ -507,7 +507,7 @@ for random_state in random_states:
             grid_search = GridSearchCV(model, param_grid, cv=cross_val, scoring=scoring, return_train_score=True)
             grid_search.fit(x_train, y_train)
             best_model = grid_search.best_estimator_
-            print("        ", best_model)
+            # print("        ", best_model)
 
             # on test set
             # print(best_model.score(x_test, y_test))
@@ -528,7 +528,7 @@ for random_state in random_states:
         if MLP:
             scoring = 'accuracy'
             name = 'Multi-layer Perceptron'
-            # print(name)
+            print(name)
 
             # Accuracy txt file
             output_path_txt = os.path.join(output_path, name + "_" + str(task + 1) + ".txt")
@@ -579,7 +579,7 @@ for random_state in random_states:
             grid_search = GridSearchCV(model, param_grid, cv=cross_val, scoring=scoring, return_train_score=True)
             grid_search.fit(x_train, y_train)
             best_model = grid_search.best_estimator_
-            print("        ", best_model)
+            # print("        ", best_model)
 
             # on test set
             # print(best_model.score(x_test, y_test))
@@ -600,7 +600,7 @@ for random_state in random_states:
         if LVQ:
             scoring = 'accuracy'
             name = 'Learning Vector Quantization'
-            # print(name)
+            print(name)
 
             # Accuracy txt file
             output_path_txt = os.path.join(output_path, name + "_" + str(task + 1) + ".txt")
@@ -627,7 +627,7 @@ for random_state in random_states:
             grid_search = GridSearchCV(model, param_grid, cv=cross_val, scoring=scoring, return_train_score=True)
             grid_search.fit(x_train, y_train)
             best_model = grid_search.best_estimator_
-            print("        ", best_model)
+            # print("        ", best_model)
 
             # on test set
             # print(best_model.score(x_test, y_test))
@@ -646,4 +646,3 @@ for random_state in random_states:
 
         # -------------------------------------------------------------------------------------------------
         doc.build(story)
-        a = a + 1
