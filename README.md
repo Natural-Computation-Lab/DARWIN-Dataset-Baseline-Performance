@@ -99,3 +99,12 @@ Once the relative flags have been set, the script can be launched by executing t
 ```cmd
 python experiment_02.py
 ```
+
+
+## Experiment 3
+the third experiment performs in the same way as experiment 2. The only difference is that this time only one run is performed on a new division of the dataset into test set and training set.
+
+To run the esperiment, use the following command:
+```cmd
+python experiment_03.py
+```
