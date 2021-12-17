@@ -263,7 +263,7 @@ for random_state in random_states:
                 for el in line:
                     file_txt.write(str(el)+"\t")
                 file_txt.write("\n")
-            file_txt.write("\nAccuracy:" + str(accuracy_score(y_test, predictions)) + "\n")
+            file_txt.write("\nAccuracy\n:" + str(accuracy_score(y_test, predictions)) + "\n")
             file_txt.close()
 
         # - knn ----------------------------------------------------------------------------------
@@ -303,7 +303,7 @@ for random_state in random_states:
                 for el in line:
                     file_txt.write(str(el)+"\t")
                 file_txt.write("\n")
-            file_txt.write("\nAccuracy:" + str(accuracy_score(y_test, predictions)) + "\n")
+            file_txt.write("\nAccuracy\n:" + str(accuracy_score(y_test, predictions)) + "\n")
             file_txt.close()
 
         # - LDA ---------------------------------------------------------------------------------
@@ -345,7 +345,7 @@ for random_state in random_states:
                 for el in line:
                     file_txt.write(str(el)+"\t")
                 file_txt.write("\n")
-            file_txt.write("\nAccuracy:" + str(accuracy_score(y_test, predictions)) + "\n")
+            file_txt.write("\nAccuracy\n:" + str(accuracy_score(y_test, predictions)) + "\n")
             file_txt.close()
 
         # - Gaussian NB ---------------------------------------------------------------------------------
@@ -387,7 +387,7 @@ for random_state in random_states:
                 for el in line:
                     file_txt.write(str(el)+"\t")
                 file_txt.write("\n")
-            file_txt.write("\nAccuracy:" + str(accuracy_score(y_test, predictions)) + "\n")
+            file_txt.write("\nAccuracy\n:" + str(accuracy_score(y_test, predictions)) + "\n")
             file_txt.close()
 
         # - LOGISTIC REGRESSION ----------------------------------------------------------------------------------
@@ -426,7 +426,7 @@ for random_state in random_states:
                 for el in line:
                     file_txt.write(str(el)+"\t")
                 file_txt.write("\n")
-            file_txt.write("\nAccuracy:" + str(accuracy_score(y_test, predictions)) + "\n")
+            file_txt.write("\nAccuracy\n:" + str(accuracy_score(y_test, predictions)) + "\n")
             file_txt.close()
 
         # - SVM -rbf --------------------------------------------------------------------------------------
@@ -465,7 +465,7 @@ for random_state in random_states:
                 for el in line:
                     file_txt.write(str(el)+"\t")
                 file_txt.write("\n")
-            file_txt.write("\nAccuracy:" + str(accuracy_score(y_test, predictions)) + "\n")
+            file_txt.write("\nAccuracy\n:" + str(accuracy_score(y_test, predictions)) + "\n")
             file_txt.close()
         # - SVM -------------------------------------------------------------------------------------------
         if SVM:
@@ -503,7 +503,7 @@ for random_state in random_states:
                 for el in line:
                     file_txt.write(str(el)+"\t")
                 file_txt.write("\n")
-            file_txt.write("\nAccuracy:" + str(accuracy_score(y_test, predictions)) + "\n")
+            file_txt.write("\nAccuracy\n:" + str(accuracy_score(y_test, predictions)) + "\n")
             file_txt.close()
 
         # - DECISION TREE -------------------------------------------------------------------------------------------
@@ -552,7 +552,7 @@ for random_state in random_states:
                 for el in line:
                     file_txt.write(str(el)+"\t")
                 file_txt.write("\n")
-            file_txt.write("\nAccuracy:" + str(accuracy_score(y_test, predictions)) + "\n")
+            file_txt.write("\nAccuracy\n:" + str(accuracy_score(y_test, predictions)) + "\n")
             file_txt.close()
 
         # - MLP  ---------------------------------------------------------------------------------------
@@ -603,7 +603,7 @@ for random_state in random_states:
                 for el in line:
                     file_txt.write(str(el)+"\t")
                 file_txt.write("\n")
-            file_txt.write("\nAccuracy:" + str(accuracy_score(y_test, predictions)) + "\n")
+            file_txt.write("\nAccuracy\n:" + str(accuracy_score(y_test, predictions)) + "\n")
             file_txt.close()
 
         # - Learning Vector Quantization -----------------------------------------------------------------------
@@ -650,7 +650,7 @@ for random_state in random_states:
                 for el in line:
                     file_txt.write(str(el)+"\t")
                 file_txt.write("\n")
-            file_txt.write("\nAccuracy:" + str(accuracy_score(y_test, predictions)) + "\n")
+            file_txt.write("\nAccuracy\n:" + str(accuracy_score(y_test, predictions)) + "\n")
             file_txt.close()
 
         # -------------------------------------------------------------------------------------------------
