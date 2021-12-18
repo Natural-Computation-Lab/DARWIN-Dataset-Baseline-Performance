@@ -20,7 +20,7 @@ from column_extractor import ColumnExtractor
 
 """
 ------------------------------------------------------------------------------------------------------------------------
-Experiment 3
+Experiment 4
 The script combines the outputs of 25 classifiers creating the set of combinations iteratively.
 we start with a classifier, add a second and calculate the performance, then add a third and so on.
 
@@ -37,7 +37,7 @@ The script input is the CSV file which contains all 25 tasks!
 ------------------------------------------------------------------------------------------------------------------------
 """
 
-print("-- Experiment 03 --")
+print("-- Experiment 04 --")
 
 random_state = 100
 
@@ -60,8 +60,8 @@ all_classifiers = {}
 order_tasks = {}
 ######################
 # processing data
-dataset_path = "Y:/Università/DOTTORATO/WorkSpace/python/MalattieNeurodegenerative/Dataset/csv/tutti i task in un file/task_ALL.csv"
-output_path = "Y:/Università/DOTTORATO/Datasets/Handwriting Alzheimer/csv/02 - tutti i task in un file/tmp/Esperimento 4/out"
+dataset_path = "data/task_ALL.csv"
+output_path = "out/experiment4"
 
 if not os.path.isdir(output_path):
     os.mkdir(output_path)
