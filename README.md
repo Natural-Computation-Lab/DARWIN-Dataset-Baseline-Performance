@@ -118,3 +118,19 @@ To run the esperiment, use the following command:
 ```cmd
 python experiment_04.py
 ```
+
+## Experiment 5
+The experiment is similar to Experiment 1.
+The difference is in the dataset used for each classification method. In this case, the 
+dataset comprises features extracted from a sub-set of tasks, and the sub-set depends on
+the classification method in use. To change the subset for each classification method, you 
+need to modify the value of the dictionary "task_to_combine". The key of the dictionary is
+the name of the classification  method, while the value is a list of integer representing 
+the task to include into the  sub-set:
+
+    task_to_combine["method_name"] = ["List of task to select..."]
+
+To run the esperiment, use the following command:
+```cmd
+python experiment_05.py
+```
