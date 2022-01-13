@@ -1,6 +1,6 @@
 # You need to copy the .csv dataset file in this folder.
 
-## _The HAND dataset_
+## The DARWIN dataset (Diagnosis AlzheimeR WIth haNdwriting)
 
 You can download the .csv dataset file at the following page:
  [http://webuser.unicas.it/fontanella/hand.html](http://webuser.unicas.it/fontanella/hand.html)
