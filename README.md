@@ -1,5 +1,5 @@
-# Diagnosing Alzheimer’s disease from on-line handwriting: a benchmark dataset and baseline systems performance evaluation
-## _The HAND dataset_
+# Diagnosing Alzheimer’s disease from on-line handwriting: a novel dataset and performance benchmarking
+## _The DARWIN dataset (Diagnosis AlzheimeR WIth haNdwriting)_
 
 
 this git contains the simulation scripts to test the HAND dataset.
