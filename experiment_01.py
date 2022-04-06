@@ -45,9 +45,9 @@ print("-- Experiment 01 --")
 
 
 # -- The following flags enable classifiers
-ranFor = False
-logReg = False
-knn = False
+ranFor = True
+logReg = True
+knn = True
 LDA = True
 GNB = True
 SVM = False
@@ -294,7 +294,7 @@ for random_state in random_states:
 
         add_modelresults_to_report(name, scoring, grid_search, score_on_cv_training, y_test, predictions)
         file_txt.write(str(accuracy_score(y_test, predictions)) + "\n")
-        story_2 = story.deepcopy()
+        story_2 = copy.deepcopy(story)
         doc.build(story_2)
 
 
@@ -323,7 +323,7 @@ for random_state in random_states:
 
         add_modelresults_to_report(name, scoring, grid_search, score_on_cv_training, y_test, predictions)
         file_txt.write(str(accuracy_score(y_test, predictions))+"\n")
-        story_2 = story.deepcopy()
+        story_2 = copy.deepcopy(story)
         doc.build(story_2)
 
     # - LDA ---------------------------------------------------------------------------------
